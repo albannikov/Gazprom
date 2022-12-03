@@ -7,5 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Contractors extends Model
 {
-    use HasFactory;
+    protected $table = "contractors";
+    public $timestamps = false;
+    protected $fillable = [
+        'organization_name',
+        'number',
+        'email',
+        'code_sma',
+    ];
+    
 }

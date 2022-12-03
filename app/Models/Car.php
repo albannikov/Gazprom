@@ -12,7 +12,7 @@ class Car extends Model
     public $timestamps = false;
     protected $fillable = [
         'id_car',
-        'user_id',
+        'id_user',
         'state_number',
         'model',
         'year_of_release',

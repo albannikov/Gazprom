@@ -18,6 +18,15 @@
      @csrf
      <button>Выйти</button>
 </form>
+
+<h3>Карточка предприятия</h3>
+@foreach($contractors as $contractor)
+     <p>Название организации {{ $contractor->organization_name }}</p>
+     <p>Номер телефона: {{ $contractor->number }}</p>
+     <p>Почта {{ $contractor->email }}</p>
+     <p>Код СМА {{ $contractor->code_sma }}</p>
+@endforeach
+<h3>Машины</h3>
 @foreach($cars as $car)
      <p>Гос. Номер: {{ $car->state_number }}</p>
      <p>Модель ТС: {{ $car->model }}</p>
