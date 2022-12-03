@@ -142,7 +142,7 @@
                   <div class="row mb-3">
                     <label for="colFormLabel" class="col-sm-2 col-form-label">Вид транспортной услуги</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" id="colFormLabel" placeholder="col-form-label" name="type_of_transport_service">
+                      <input type="text" class="form-control" id="colFormLabel" placeholder="Укажите вид услуги" name="type_of_transport_service">
                     </div>
                   </div>
 
@@ -163,14 +163,14 @@
                   <div class="row mb-3">
                     <label for="colFormLabel" class="col-sm-2 col-form-label">Тип ТС</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" id="colFormLabel" placeholder="col-form-label" name="type_ts">
+                      <input type="text" class="form-control" id="colFormLabel" placeholder="Укажите тип ТС" name="type_ts">
                     </div>
                   </div>
 
                   <div class="row mb-3">
-                    <label for="colFormLabel" class="col-sm-2 col-form-label">Значение характеристики типа ТС</label>
+                    <label for="colFormLabel" class="col-sm-2 col-form-label">Характеристики типа ТС</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" id="colFormLabel" placeholder="col-form-label" name="the_value_of_the_vehicle_type_characteristic">
+                      <input type="text" class="form-control" id="colFormLabel" placeholder="Укажите характеристики типа ТС" name="the_value_of_the_vehicle_type_characteristic">
                     </div>
                   </div>
 
