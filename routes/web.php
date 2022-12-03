@@ -29,7 +29,7 @@ Route::get('/list', function(){
     return "admin";
 })->middleware('RoleAdmin:admin');
 
-Route::get('/list', [UserController::class,'index'])->middleware('RoleUser:user');
+Route::post('/add-car', [UserController::class,'addCar'])->middleware('RoleUser:user');
 
 
 
