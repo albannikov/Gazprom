@@ -11,6 +11,7 @@
 
  
     </head>
+    <!-- Хэдер -->
     <header class="p-3 menu shadow-lg border-bottom">
     <div class="container">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
@@ -21,33 +22,28 @@
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
           <li><a href="/home" class="nav-link px-2 text-secondary">Главная</a></li>
           <li><a href="/car" class="nav-link px-2">Добавить машину</a></li>
-          <li><a href="/application" class="nav-link px-2">Добавить заявку</a></li>
-
+          <li><a href="/application" class="nav-link px-2">Направить заявку</a></li>
+          <li><a href="/pass" class="nav-link px-2">Одобренные заявки</a></li>
         </ul>
-
         <div class="text-end">
-
-
-<div class="btn-group">
-  <!-- Кнопка -->
-  <button type="button" class="btn btn btn-outline-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-  @foreach($contractors as $contractor)
-  {{ $contractor->organization_name }}
-  @endforeach
-  </button>  
-  <!-- Меню -->  
-  <div class="dropdown-menu menu-foruser">
-  <h3>Карточка предприятия</h3>
-@foreach($contractors as $contractor)
-     <p>Название организации {{ $contractor->organization_name }}</p>
-     <p>Номер телефона: {{ $contractor->number }}</p>
-     <p>Почта {{ $contractor->email }}</p>
-     <p>Код СМА {{ $contractor->code_sma }}</p>
-@endforeach
-  </div>
-</div>
-
-
+          <div class="btn-group">
+            <!-- Кнопка -->
+            <button type="button" class="btn btn btn-outline-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            @foreach($contractors as $contractor)
+            {{ $contractor->organization_name }}
+            @endforeach
+            </button>  
+            <!-- Меню -->  
+            <div class="dropdown-menu menu-foruser">
+            <h3>Карточка предприятия</h3>
+          @foreach($contractors as $contractor)
+              <p>Название организации {{ $contractor->organization_name }}</p>
+              <p>Номер телефона: {{ $contractor->number }}</p>
+              <p>Почта {{ $contractor->email }}</p>
+              <p>Код СМА {{ $contractor->code_sma }}</p>
+          @endforeach
+            </div>
+          </div>
         <button action="{{ route('logout') }}" type="button" class="btn btn-outline-primary">
           <form method="POST" action="{{ route('logout') }}">
             @csrf
@@ -55,13 +51,14 @@
         onclick="event.preventDefault();
         this.closest('form').submit();"><i class="fa-solid fa-right-from-bracket"></i>  
         {{ __('Выход') }}
-    </a>
-</form> </button>
-
+          </a>
+        </form> 
+        </button>     
         </div>
       </div>
     </div>
-  </header>      
+  </header>
+<!-- Хэдер -->
         
     <body>
     <section class="main-section">
