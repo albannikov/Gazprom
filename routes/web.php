@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\QrCodeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\QRController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -39,15 +40,10 @@ Route::get('/application-admin',[App\Http\Controllers\HomeController::class, 'ap
 Route::post('/application-accpet', [AdminController::class,'applicationAccpet'])->middleware('RoleAdmin:admin');
 Route::post('/changeStatus', [AdminController::class,'changeStatus'])->middleware('RoleAdmin:admin');
 
+
+Route::get('/qr-code/{number}', [QRController::class, 'index']);
+
 # Тестовые роуты
-Route::get('/list', function(){
-    return "admin";
-})->middleware('RoleAdmin:admin');
-
-
-
-
-
 
 
 Route::get('/qr', function(){
