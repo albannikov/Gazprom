@@ -40,6 +40,16 @@ class HomeController extends Controller
         
     }
 
+    public function application(Request $request)
+    {
+       
+        
+
+            return view('application');
+        
+        
+    }
+
 
 
     
