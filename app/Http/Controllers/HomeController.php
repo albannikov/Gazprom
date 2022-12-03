@@ -56,6 +56,7 @@ class HomeController extends Controller
     public function car(Request $request)
     {
        
+        
         return view('car');
         
     }
