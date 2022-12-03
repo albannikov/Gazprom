@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\QrCodeController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,6 +21,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index2']);
+
+
 Route::get('/qr', function(){
     return QrCode::size(300)->generate('123');
 });
