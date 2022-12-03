@@ -51,7 +51,8 @@ class UserController extends Controller
             'id_user' => $id,
             'point_a' => $request->input('point_a'),
             'point_b' => $request->input('point_b'),
-            'period' => $request->input('period'),
+            'period_from' => $request->input('period_from'),
+            'period_to' => $request->input('period_to'),
             'state_number' => $request->input('state_number'),
 
         ]);

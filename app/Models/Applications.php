@@ -14,7 +14,8 @@ class Applications extends Model
         'id_user',
         'point_a',
         'point_b',
-        'period',
+        'period_from',
+        'period_to',
         'state_number',
         'status'
     ];
