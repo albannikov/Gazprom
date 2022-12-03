@@ -4,12 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use Maatwebsite\Excel\Facades\Excel;
 use App\Models\Contractors;
 use App\Models\User;
 use App\Models\Car;
 use App\Models\Applications;
 use App\Models\Pass;
+use App\Exports\CarExport;
+use App\Exports\PassExport;
+use App\Exports\ApplicationsExport;
 use Auth;
 
 class AdminController extends Controller
@@ -17,7 +20,16 @@ class AdminController extends Controller
 
    public function generateReport(Request $request)
    {
-        return 123;
+        if($request->input('car')){
+            return Excel::download(new CarExport, 'cars.xlsx');
+        }
+        if($request->input('pass')){
+            return Excel::download(new PassExport, 'pass.xlsx');
+        }
+        if($request->input('applications')){
+            return Excel::download(new ApplicationsExport, 'applications.xlsx');
+        }
+    
    }
 
 

@@ -49,9 +49,10 @@ Route::post('/changeStatus', [AdminController::class,'changeStatus'])->middlewar
 
 Route::get('/qr-code/{number}', [QRController::class, 'index']);
 
+
 # Тестовые роуты
 
 
 Route::get('/qr', function(){
-    return QrCode::size(300)->generate('123');
+ 
 });
