@@ -15,7 +15,8 @@
 }
 
 .menu {
-background-color: rgb(47, 180, 233);;
+background-color: rgb(255, 255, 255);
+box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
 }
 
 
