@@ -54,7 +54,61 @@
     <body>      
     <section class="main-section">
 
-    @foreach($applications as $application)
+
+    
+
+<table class="table table-hover">
+<thead class="table-dark table-font">
+    <tr>
+      <th scope="col">Организация</th>
+      <th scope="col">Гос. номер</th>
+      <th scope="col">Пункт отправления</th>
+      <th scope="col">Пункт назначения</th>
+      <th scope="col">Действует с</th>
+      <th scope="col">Действует по</th>
+      <th scope="col">Статус</th>
+      <th scope="col">В работу</th>
+     
+    </tr>
+  </thead>
+  
+  <!-- <form action="{{ route('logout') }}" method="POST" class="d-none">
+        @csrf
+        <button>Выйти</button>
+  </form> -->
+
+  <tbody>
+  @foreach($applications as $application)
+        <form action="{{ url('/changeStatus') }}" method="POST">
+            @csrf
+    <tr>
+      <td>{{ $application->organization_name }}</td>
+      <td>{{ $application->state_number }}</td>
+      <td>{{ $application->point_a }}</td>
+      <td>{{ $application->point_b }}</td>
+      <td>{{ $application->period_from }}</td>
+      <td>{{ $application->period_to }}</td>
+      <td>{{ $application->status }}</td>
+      <td>
+      @if($application->status == 'отправлено')
+                
+                <input type="hidden" name="id_applications" value="{{ $application->id_applications }}">   
+                <button class="btn btn-outline-success" value="Принято в обработку" name="status">Принять в работу </button>            
+            @elseif($application->status == 'Принято в обработку')                
+                <input type="hidden" name="id_applications" value="{{ $application->id_applications }}">
+                <input type="submit" value="Выдано разрешение" name="status">
+                <input type="submit" value="Отклонено" name="status">
+            @endif
+    </td>      
+    </tr>   
+    @endforeach
+  </tbody>
+</table>
+
+
+
+
+    <!-- @foreach($applications as $application)
         <form action="{{ url('/changeStatus') }}" method="POST">
             @csrf
             <p>Организация {{ $application->organization_name }}</p>
@@ -65,18 +119,16 @@
             <p>Статус: {{ $application->status }}</p>
             @if($application->status == 'отправлено')
                 
-                <input type="hidden" name="id_applications" value="{{ $application->id_applications }}">
-                <input type="submit" value="Принято в обработку" name="status"> 
-            
-            @elseif($application->status == 'Принято в обработку')
-                
+                <input type="hidden" name="id_applications" value="{{ $application->id_applications }}">   
+                <button class="btn btn-outline-success" value="Принято в обработку" name="status">Принять в работу </button>            
+            @elseif($application->status == 'Принято в обработку')                
                 <input type="hidden" name="id_applications" value="{{ $application->id_applications }}">
                 <input type="submit" value="Выдано разрешение" name="status">
                 <input type="submit" value="Отклонено" name="status">
             @endif
    
     </form>
-@endforeach
+@endforeach -->
     </section>
 
     <footer class="footer d-flex flex-wrap justify-content-between align-items-center border-top p-5">
