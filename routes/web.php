@@ -15,13 +15,14 @@ use App\Http\Controllers\UserController;
 */
 
 Route::get('/', function () {
+    
     return view('/auth/login');
 });
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/car', [App\Http\Controllers\HomeController::class, 'index'])->middleware('RoleUser:user');
+Route::get('/car', [App\Http\Controllers\HomeController::class, 'car'])->middleware('RoleUser:user');
 Route::get('/application', [App\Http\Controllers\HomeController::class, 'application'])->middleware('RoleUser:user');
 Route::post('/add-car', [UserController::class,'addCar'])->middleware('RoleUser:user');
 Route::post('/add-application', [UserController::class,'addApplication'])->middleware('RoleUser:user');

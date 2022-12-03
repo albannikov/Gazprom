@@ -40,14 +40,13 @@
   </header>
   
     <body>
+      
       <section class="main-section">
 
-     
+
+      
 <p>страница пользователя</p>
-<form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-     @csrf
-     <button>Выйти</button>
-</form>
+
 
 <h3>Карточка предприятия</h3>
 @foreach($contractors as $contractor)
@@ -77,6 +76,12 @@
      
     </tr>
   </thead>
+
+  <form action="{{ route('logout') }}" method="POST" class="d-none">
+        @csrf
+        <button>Выйти</button>
+  </form>
+
   <tbody>
   @foreach($cars as $car)
     <tr>
