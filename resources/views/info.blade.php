@@ -1,3 +1,6 @@
+@foreach($contractors as $contractor)
+            <p>Название организации{{ $contractor->organization_name }}</p>
+@endforeach
 @foreach ($info as $text)
     <p>Номер машины: {{ $text->state_number }}<p>
     <p>Точка А: {{ $text->point_a }}<p>
