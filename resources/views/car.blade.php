@@ -82,6 +82,11 @@
                   <div class="row mb-3">
                     <label for="colFormLabel" class="col-sm-2 col-form-label">Гос. Номер</label>
                     <div class="col-sm-10">
+                    <select>Номер машины
+                          @foreach($cars as $car)
+                            <option value="2022" name="state_number">{{ $car->state_number }}</option>
+                          @endforeach
+                    </select>
                       <input type="text" class="form-control" id="colFormLabel" placeholder="Укажите гос. номер" name="state_number">
                     </div>
                   </div>

@@ -15,7 +15,7 @@ use Auth;
 class AdminController extends Controller
 {
 
-   public function generateReport()
+   public function generateReport(Request $request)
    {
         return 123;
    }

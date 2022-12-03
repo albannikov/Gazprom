@@ -41,7 +41,7 @@ Route::get('/application-admin',[App\Http\Controllers\HomeController::class, 'ap
 Route::get('/search', [App\Http\Controllers\HomeController::class, 'search'])->middleware('RoleAdmin:admin');
 Route::get('/report',[App\Http\Controllers\HomeController::class, 'report'])->middleware('RoleAdmin:admin');
 
-Route::post('/report/generate',[AdminController::class, 'generateReport'])->middleware('RoleAdmin:admin');
+Route::post('/generate',[AdminController::class, 'generateReport'])->middleware('RoleAdmin:admin');
 Route::post('/post-search', [AdminController::class, 'postSearch'])->middleware('RoleAdmin:admin');
 Route::post('/application-accpet', [AdminController::class,'applicationAccpet'])->middleware('RoleAdmin:admin');
 Route::post('/changeStatus', [AdminController::class,'changeStatus'])->middleware('RoleAdmin:admin');
