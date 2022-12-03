@@ -35,7 +35,7 @@ class HomeController extends Controller
             return view('adminHome',compact('cars'));
         }
         else{
-            //Получаем список машин
+            
             $id = Auth::id();
             $contractors = Contractors::where('id_user', $id)->get();
             $cars = Car::where('id_user', $id)->get();
@@ -58,9 +58,10 @@ class HomeController extends Controller
     
     public function car(Request $request)
     {
-       
-
-        return view('car');
+        $id = Auth::id();
+        $contractors = Contractors::where('id_user', $id)->get();
+        $cars = Car::where('id_user', $id)->get();
+        return view('car',compact('contractors'));
         
     }
 
