@@ -10,6 +10,7 @@ class Applications extends Model
     protected $table = "applications";
     public $timestamps = false;
     protected $fillable = [
+        'id_applications',
         'id_car',
         'id_user',
         'point_a',
