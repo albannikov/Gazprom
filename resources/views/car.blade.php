@@ -58,16 +58,13 @@
     </a>
 </form> </button>
 
-        
- 
         </div>
       </div>
     </div>
-  </header>
-          
+  </header>      
         
     <body>
-
+    <section class="main-section">
 <form action="{{ url('/add-car') }}" method="POST">
         @csrf
           <p>Гос. Номер: <input type="text" name="state_number"></p>
@@ -84,6 +81,18 @@
           <p>Субподряд: <input type="text" name="subcontracting"></p>
           <p>Основание владения: <input type="text" name="the_basis_of_ownership"></p>
           <button class="btn btn-primary">Отправить</button>
+<div class="container">
+         
+    
+</div>
+
      </form>
+     </section>
+     <footer class="footer d-flex flex-wrap justify-content-between align-items-center border-top p-5">
+        <p class="footer col-md-4 mb-0 text-white">© 2022 ООО "Газпромнефть-Хантос"</p>
+        <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+      <img src="/img/logogray.png" width="280">
+    </a>
+  </footer>
 </body>
 </html>
