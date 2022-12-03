@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Car;
 use Auth;
 class HomeController extends Controller
 {
@@ -26,12 +27,18 @@ class HomeController extends Controller
     {
         if($request->user()->role == 'admin')
             return view('adminHome');
+            
         else{
-            return view('userHome');
+            //Получаем список машин
+            $id = Auth::id();
+            $cars = Car::where('user_id', $id)->get();
+
+            return view('userHome',compact('cars'));
         }
         
-        
     }
+
+
 
     
 
