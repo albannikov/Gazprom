@@ -85,14 +85,14 @@
                   <div class="row mb-3">
                     <label for="colFormLabel" class="col-sm-2 col-form-label">Гос. Номер</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" id="colFormLabel" placeholder="col-form-label" name="state_number">
+                      <input type="text" class="form-control" id="colFormLabel" placeholder="Укажите гос. номер" name="state_number">
                     </div>
                   </div>
 
                   <div class="row mb-3">
                     <label for="colFormLabel" class="col-sm-2 col-form-label">Модель ТС</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" id="colFormLabel" placeholder="col-form-label" name="model">
+                      <input type="text" class="form-control" id="colFormLabel" placeholder="Укажите модель ТС" name="model">
                     </div>
                   </div>
 
@@ -128,7 +128,14 @@
                   <div class="row mb-3">
                     <label for="colFormLabel" class="col-sm-2 col-form-label">Код ТС</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" id="colFormLabel" placeholder="col-form-label" name="code_ts">
+                      <!-- <input type="text" class="form-control" id="colFormLabel" placeholder="col-form-label" name="code_ts"> -->
+                      <select class="form-select" id="autoSizingSelect"  name="code_ts">
+                      <option selected>Укажите код ТС</option>
+                          <option value="1.1.1.2.1.1.">1.1.1.2.1.1.</option>
+                          <option value="2.1.5.2.1.1.">2.1.5.2.1.1.</option>
+                          <option value="3.1.1.1.1.2.">3.1.1.1.1.2.</option>       
+                          <option value="3.1.2.1.2.1.">3.1.2.1.2.1.</option>                   
+                    </select>
                     </div>
                   </div>
 
@@ -142,7 +149,14 @@
                   <div class="row mb-3">
                     <label for="colFormLabel" class="col-sm-2 col-form-label">Вид ТС</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" id="colFormLabel" placeholder="col-form-label" name="view_ts">
+                      <!-- <input type="text" class="form-control" id="colFormLabel" placeholder="col-form-label" name="view_ts"> -->
+                      <select class="form-select" id="autoSizingSelect"  name="view_ts">
+                      <option selected>Укажите вид ТС</option>
+                          <option value="Автобусы и грузопассажирские автомобили на шасси грузовых автомобилей">Автобусы и грузопассажирские автомобили на шасси грузовых автомобилей</option>
+                          <option value="Автомобильный спец.транспорт для перевозки грузов">Автомобильный спец.транспорт для перевозки грузов</option>
+                          <option value="Легковые автомобили и их модификации">Легковые автомобили и их модификации</option>       
+                          <option value="Пассажирские автобусы">Пассажирские автобусы</option>                   
+                    </select>
                     </div>
                   </div>
 
@@ -163,28 +177,56 @@
                   <div class="row mb-3">
                     <label for="colFormLabel" class="col-sm-2 col-form-label">Страна производства</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" id="colFormLabel" placeholder="col-form-label" name="country_of_manufacture">
+                      <!-- <input type="text" class="form-control" id="colFormLabel" placeholder="col-form-label" name="country_of_manufacture"> -->
+
+                      <select class="form-select" id="autoSizingSelect" name="country_of_manufacture">
+                      <option selected>Укажите страну производства</option>
+                          <option value="Россия">Россия</option>
+                          <option value="Германия">Германия</option>
+                          <option value="Китай">Китай</option>
+                          <option value="Япония">Япония</option>
+                          <option value="Корея">Корея</option>
+                          <option value="Канада">Канада</option>
+                          <option value="Франция">Франция</option>                              
+                    </select>
                     </div>
                   </div>
 
                   <div class="row mb-3">
                     <label for="colFormLabel" class="col-sm-2 col-form-label">Вид топлива</label>
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control" id="colFormLabel" placeholder="col-form-label" name="type_of_fuel">
+                    <div class="col-sm-10">    
+                      <select class="form-select" id="autoSizingSelect" name="type_of_fuel">
+                      <option selected>Укажите вид топлива</option>
+                          <option value="Бензин">Бензин</option>
+                          <option value="ДТ">ДТ</option>
+                          <option value="Не определено">Не определено</option>                                
+                    </select>
                     </div>
                   </div>
 
                   <div class="row mb-3">
                     <label for="colFormLabel" class="col-sm-2 col-form-label">Субподряд</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" id="colFormLabel" placeholder="col-form-label" name="subcontracting">
+                      <!-- <input type="text" class="form-control" id="colFormLabel" placeholder="col-form-label" name="subcontracting"> -->
+                      <select class="form-select" id="autoSizingSelect" name="subcontracting">
+                      <option selected>Субподряд</option>
+                          <option value="Да">Да</option>
+                          <option value="Нет">Нет</option>                          
+                    </select>
                     </div>
                   </div>
 
                   <div class="row mb-3">
                     <label for="colFormLabel" class="col-sm-2 col-form-label">Основание владения</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" id="colFormLabel" placeholder="col-form-label" name="the_basis_of_ownership">
+                      <!-- <input type="text" class="form-control" id="colFormLabel" placeholder="col-form-label" name="the_basis_of_ownership"> -->
+                      <select class="form-select" id="autoSizingSelect"  name="the_basis_of_ownership">
+                      <option selected>Укажите основания владения</option>
+                          <option value="Лизинг">Лизинг</option>
+                          <option value="Аренда">Аренда</option>
+                          <option value="Договор купли-продажи">Договор купли-продажи</option>       
+                          <option value="Не определено">Не определено</option>                   
+                    </select>
                     </div>
                   </div>
 
