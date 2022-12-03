@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Car;
+use App\Models\Contractors;
 use Auth;
 class HomeController extends Controller
 {
@@ -31,9 +32,10 @@ class HomeController extends Controller
         else{
             //Получаем список машин
             $id = Auth::id();
-            $cars = Car::where('user_id', $id)->get();
+            $contractors = Contractors::where('id_user', $id)->get();
+            $cars = Car::where('id_user', $id)->get();
 
-            return view('userHome',compact('cars'));
+            return view('userHome',compact('cars','contractors'));
         }
         
     }
