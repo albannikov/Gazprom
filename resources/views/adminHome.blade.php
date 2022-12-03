@@ -13,10 +13,10 @@
 
  
     </head>
-    <header class="p-3 menu text-white">
+    <header class="p-3 menu">
     <div class="container">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-decoration-none">
           <img src="/img/logo.png" class="cabinet-logo">
         </a>
 
@@ -30,19 +30,18 @@
 
     
 
-        <div class="text-end">
 
-            <a class="dropdown-item" href="{{ route('logout') }}"
-                onclick="event.preventDefault();
-                document.getElementById('logout-form').submit();">
-                {{ __('Logout') }}
-            </a>
+        <button action="{{ route('logout') }}" type="button" class="btn btn-outline-primary">
+          <form method="POST" action="{{ route('logout') }}">
+            @csrf
+          <a href="{{ route('logout') }}"
+        onclick="event.preventDefault();
+        this.closest('form').submit();"><i class="fa-solid fa-right-from-bracket"></i>  
+        {{ __('Выход') }}
+    </a>
+</form> </button>
 
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                @csrf
-            </form>
-            
-        </div>
+
       </div>
     </div>
   </header>
