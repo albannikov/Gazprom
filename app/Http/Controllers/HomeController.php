@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Car;
 use App\Models\Contractors;
+use App\Models\Applications;
 use Auth;
+
 class HomeController extends Controller
 {
     /**
@@ -45,9 +47,9 @@ class HomeController extends Controller
     public function application(Request $request)
     {
        
-        
-
-            return view('application');
+             $id = Auth::id();
+            $applications = Applications::where('id_user',$id)->get();
+            return view('application',compact('applications'));
         
         
     }
@@ -56,7 +58,7 @@ class HomeController extends Controller
     public function car(Request $request)
     {
        
-        
+
         return view('car');
         
     }

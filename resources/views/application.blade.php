@@ -6,4 +6,10 @@
      <p>Срок действия с<input type="date" name="period_from">по<input type="date" name="period_to"></p>
      <button>Отправить</button>
 </form>
+@foreach($applications as $application)
+    <p>Номер машины {{ $application->state_number }}</p>
+    <p>Точка А {{ $application->point_a }}</p>
+    <p>Точка Б {{ $application->point_b }}</p>
+    <p>с {{ $application->period_from }} по {{ $application->period_to }} </p>
+@endforeach
      
