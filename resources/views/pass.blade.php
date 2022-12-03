@@ -29,10 +29,10 @@
         </a>
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-          <li><a href="/home" class="nav-link px-2 text-secondary">Главная</a></li>
+          <li><a href="/home" class="nav-link px-2">Главная</a></li>
           <li><a href="/car" class="nav-link px-2">Добавить машину</a></li>
           <li><a href="/application" class="nav-link px-2">Направить заявку</a></li>
-          <li><a href="/pass" class="nav-link px-2">Одобренные заявки</a></li>
+          <li><a href="/pass" class="nav-link px-2 text-secondary">Одобренные заявки</a></li>
         </ul>
         <div class="text-end">
           <div class="btn-group">
