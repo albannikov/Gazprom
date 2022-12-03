@@ -3,16 +3,18 @@
     <head>
     <title>АИС "Дороги - Газпром" - кабинет поставщика услуг</title>
         <link rel="shortcut icon" href="/img/favicon.png" />
+        <script src="https://kit.fontawesome.com/ac6463d131.js" crossorigin="anonymous"></script>       
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/all.css">
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
  
     </head>
-    <header class="p-3 menu">
+    <header class="p-3 menu shadow-lg border-bottom">
     <div class="container">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
         <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-decoration-none">
@@ -30,7 +32,8 @@
     
 
         <div class="text-end">
-          <button type="button" class="btn btn-outline-light me-2">Выход</button>
+        <button type="button" class="btn btn-outline-primary"><i class="fa-solid fa-right-from-bracket"></i> Выход</button>
+
  
         </div>
       </div>
@@ -40,11 +43,6 @@
     <body>
       
       <section class="main-section">
-
-
-      
-<p>страница пользователя</p>
-
 
 <h3>Карточка предприятия</h3>
 @foreach($contractors as $contractor)
@@ -56,7 +54,7 @@
 
 
 <table class="table table-hover">
-<thead class="table-dark">
+<thead class="table-dark table-font">
     <tr>
       <th scope="col">Гос. Номер</th>
       <th scope="col">Модель ТС</th>
