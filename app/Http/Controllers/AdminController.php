@@ -19,7 +19,7 @@ class AdminController extends Controller
 
     }
 
-    public function underСonsideration(Request $request)
+    public function changeStatus(Request $request)
     {  
         
         if($request->input('status') == 'Принято в обработку'){
@@ -41,10 +41,15 @@ class AdminController extends Controller
                 'state_number' => $application->state_number,
                 'qr_code' => $rand,
             ]);
+
+            Applications::where('id_applications',$id_applications)->update(['status' => 'Выдано разрешение']);
             return redirect('application-admin');
         }
-
-        
+        elseif($request->input('status') == 'Отклонено')
+        {
+            Applications::where('id_applications',$request->input('id_applications'))->update(['status' => 'Отклонено']);
+            return redirect('application-admin');
+        }
         
 
 
