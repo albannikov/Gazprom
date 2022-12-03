@@ -89,7 +89,7 @@ class HomeController extends Controller
 
     public function report()
     {
-        return view('report';)
+        return view('report');
     }
     
 
