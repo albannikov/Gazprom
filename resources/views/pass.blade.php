@@ -29,10 +29,10 @@
         </a>
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-          <li><a href="/home" class="nav-link px-2 text-secondary">Главная</a></li>
+          <li><a href="/home" class="nav-link px-2">Главная</a></li>
           <li><a href="/car" class="nav-link px-2">Добавить машину</a></li>
           <li><a href="/application" class="nav-link px-2">Направить заявку</a></li>
-          <li><a href="/pass" class="nav-link px-2">Одобренные заявки</a></li>
+          <li><a href="/pass" class="nav-link px-2 text-secondary">Одобренные заявки</a></li>
         </ul>
         <div class="text-end">
           <div class="btn-group">
@@ -73,7 +73,42 @@
     <body>      
       <section class="main-section">
 
+
+      
+
+<table class="table table-hover">
+<thead class="table-dark table-font">
+    <tr>
+      <th scope="col">Гос. Номер</th>
+      <th scope="col">Точка А</th>
+      <th scope="col">Точка Б</th>
+      <th scope="col">Действителен с</th>
+      <th scope="col">Действителен по</th>
+      <th scope="col">Уникальный код</th>
+      <th scope="col">QR-код</th>
+
+     
+      <tbody>
       @foreach($allPass as $pass)
+    <tr>
+      <td>{{ $pass->state_number }}</td>
+      <td>{{ $pass->point_a }}</td>
+      <td>{{ $pass->point_b }}</td>
+      <td>{{ $pass->period_from }}</td>
+      <td> {{ $pass->period_to }}</td>   
+      <td><a href="/qr-code/{{ $pass->qr_code }}">Уникальный код</a></td>
+      <td>{!! QrCode::size(300)->generate('http://road.local/qr-code/' . $pass->qr_code ) !!}</td>
+    </tr>   
+    @endforeach
+  </tbody>
+
+    </tr>
+  </thead>
+</table>
+
+
+
+      <!-- @foreach($allPass as $pass)
     <p>Номер машины: {{ $pass->state_number }}</p>
     <p>Точка А: {{ $pass->point_a }}</p>
     <p>Точка Б: {{ $pass->point_b }}</p>
@@ -82,7 +117,7 @@
     {!! QrCode::size(300)->generate('http://road.local/qr-code/' . $pass->qr_code ) !!}
     <a href="/qr-code/{{ $pass->qr_code }}">Уникальный код</a>
     @endforeach
-        
+         -->
 
         </section>
 

@@ -29,9 +29,9 @@
         </a>
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-          <li><a href="/home" class="nav-link px-2 text-secondary">Главная</a></li>
+          <li><a href="/home" class="nav-link px-2">Главная</a></li>
           <li><a href="/car" class="nav-link px-2">Добавить машину</a></li>
-          <li><a href="/application" class="nav-link px-2">Направить заявку</a></li>
+          <li><a href="/application" class="nav-link px-2 text-secondary">Направить заявку</a></li>
           <li><a href="/pass" class="nav-link px-2">Одобренные заявки</a></li>
         </ul>
         <div class="text-end">
@@ -88,15 +88,38 @@
 </form>
 
 
+<table class="table table-hover">
+<thead class="table-dark table-font">
+    <tr>
+      <th scope="col">Гос. Номер</th>
+      <th scope="col">Точка А</th>
+      <th scope="col">Точка Б</th>
+      <th scope="col">Действителен с</th>
+      <th scope="col">Действителен по</th>
+      <th scope="col">Статус</th>
 
 
-@foreach($applications as $application)
-    <p>Номер машины {{ $application->state_number }}</p>
-    <p>Точка А {{ $application->point_a }}</p>
-    <p>Точка Б {{ $application->point_b }}</p>
-    <p>с {{ $application->period_from }} по {{ $application->period_to }} </p>
-    <p>Статус: {{ $application->status }}</p>
-@endforeach
+     
+      <tbody>
+      @foreach($applications as $application)
+    <tr>
+      <td>{{ $application->state_number }}</td>
+      <td>{{ $application->point_a }}</td>
+      <td>{{ $application->point_b }}</td>
+      <td>{{ $application->period_from }}</td>
+      <td>{{ $application->period_to }} </td>   
+      <td>{{ $application->status }}</td>
+      
+    </tr>   
+    @endforeach
+  </tbody>
+
+    </tr>
+  </thead>
+</table>
+
+
+
      
 
         </section>
