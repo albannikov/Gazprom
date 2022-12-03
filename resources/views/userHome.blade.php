@@ -16,10 +16,11 @@
         <link rel="stylesheet" href="/css/style.css">
         <link rel="stylesheet" href="/css/all.css">
         <!-- CSRF Token -->
-        <meta name="csrf-token" content="{{ csrf_token() }}">
-
- 
+        <meta name="csrf-token" content="{{ csrf_token() }}"> 
     </head>
+
+
+<!-- Хэдер -->
     <header class="p-3 menu shadow-lg border-bottom">
     <div class="container">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
@@ -33,30 +34,25 @@
           <li><a href="/application" class="nav-link px-2">Направить заявку</a></li>
           <li><a href="/pass" class="nav-link px-2">Одобренные заявки</a></li>
         </ul>
-
         <div class="text-end">
-
-
-<div class="btn-group">
-  <!-- Кнопка -->
-  <button type="button" class="btn btn btn-outline-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-  @foreach($contractors as $contractor)
-  {{ $contractor->organization_name }}
-  @endforeach
-  </button>  
-  <!-- Меню -->  
-  <div class="dropdown-menu menu-foruser">
-  <h3>Карточка предприятия</h3>
-@foreach($contractors as $contractor)
-     <p>Название организации {{ $contractor->organization_name }}</p>
-     <p>Номер телефона: {{ $contractor->number }}</p>
-     <p>Почта {{ $contractor->email }}</p>
-     <p>Код СМА {{ $contractor->code_sma }}</p>
-@endforeach
-  </div>
-</div>
-
-
+          <div class="btn-group">
+            <!-- Кнопка -->
+            <button type="button" class="btn btn btn-outline-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            @foreach($contractors as $contractor)
+            {{ $contractor->organization_name }}
+            @endforeach
+            </button>  
+            <!-- Меню -->  
+            <div class="dropdown-menu menu-foruser">
+            <h3>Карточка предприятия</h3>
+          @foreach($contractors as $contractor)
+              <p>Название организации {{ $contractor->organization_name }}</p>
+              <p>Номер телефона: {{ $contractor->number }}</p>
+              <p>Почта {{ $contractor->email }}</p>
+              <p>Код СМА {{ $contractor->code_sma }}</p>
+          @endforeach
+            </div>
+          </div>
         <button action="{{ route('logout') }}" type="button" class="btn btn-outline-primary">
           <form method="POST" action="{{ route('logout') }}">
             @csrf
@@ -64,15 +60,15 @@
         onclick="event.preventDefault();
         this.closest('form').submit();"><i class="fa-solid fa-right-from-bracket"></i>  
         {{ __('Выход') }}
-    </a>
-</form> </button>
-
-        
- 
+          </a>
+        </form> 
+        </button>     
         </div>
       </div>
     </div>
   </header>
+<!-- Хэдер -->
+
 
     <body>
       
