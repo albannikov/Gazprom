@@ -84,9 +84,13 @@ class HomeController extends Controller
 
     public function search()
     {
-        return view('/search');
+        return view('search');
     }
 
+    public function report()
+    {
+        return view('report';)
+    }
     
 
     
