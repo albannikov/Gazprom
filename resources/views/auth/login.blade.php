@@ -41,7 +41,7 @@
             </div>
             <!-- <button class="btn mt-3">Login</button> -->
             <button class="btn mt-3" type="submit" class="btn btn-primary">
-                {{ __('Login') }}
+                {{ __('Вход') }}
             </button>
         </form>
       
