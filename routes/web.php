@@ -54,5 +54,5 @@ Route::get('/qr-code/{number}', [QRController::class, 'index']);
 
 
 Route::get('/qr', function(){
- 
+    return view('qr-scan');
 });
