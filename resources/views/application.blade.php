@@ -75,16 +75,67 @@
 
       <form action="{{ url('/add-application') }}" method="POST">
      @csrf
-     <p>Номер машины </p>
-     <select name="state_number">
-        @foreach($cars as $car)
-          <option>{{ $car->state_number }}</option>
-        @endforeach
-    </select>
-     <p>Точка А<input type="text" name="point_a"></p>
-     <p>Точка Б<input type="text" name="point_b"></p>
-     <p>Срок действия с<input type="date" name="period_from">по<input type="date" name="period_to"></p>
-     <button class="btn btn-primary">Отправить</button>
+        <div class="container">
+                  <div class="row mb-3">
+                        <label for="colFormLabel" class="col-sm-2 col-form-label">Гос. Номер</label>
+                  <div class="col-sm-10">    
+                        <select class="form-select" id="autoSizingSelect" name="state_number">
+                        <option selected>Укажите гос. номер</option>
+                        @foreach($cars as $car)
+                            <option>{{ $car->state_number }}</option>
+                            @endforeach                  
+                        </select>     
+                    </div>
+                  </div>
+                
+
+
+                  <div class="row mb-3">
+                    <label for="colFormLabel" class="col-sm-2 col-form-label">Пункт отправления</label>
+                    <div class="col-sm-10">
+                      <!-- <input type="text" class="form-control" id="colFormLabel" placeholder="col-form-label" name="code_ts"> -->
+                      <select class="form-select" id="autoSizingSelect" name="point_a">
+                      <option selected>Город</option>
+                          <option value="Сургут">Сургут</option>
+                          <option value="Нижневартовск">Нижневартовск</option>
+                          <option value="Ханты-Мансийск">Ханты-Мансийск</option>       
+                          <option value="Радужный">Радужный</option>                   
+                    </select>
+                    </div>
+                  </div>
+                  
+
+                  <div class="row mb-3">
+                    <label for="colFormLabel" class="col-sm-2 col-form-label">Пункт назначения</label>
+                    <div class="col-sm-10">
+                      <!-- <input type="text" class="form-control" id="colFormLabel" placeholder="col-form-label" name="code_ts"> -->
+                      <select class="form-select" id="autoSizingSelect" name="point_b">
+                      <option selected>Город</option>
+                          <option value="Сургут">Сургут</option>
+                          <option value="Нижневартовск">Нижневартовск</option>
+                          <option value="Ханты-Мансийск">Ханты-Мансийск</option>       
+                          <option value="Радужный">Радужный</option>                   
+                    </select>
+                    </div>
+                  </div>
+
+
+                  <div class="row mb-3">
+                    <label for="colFormLabel" class="col-sm-2 col-form-label">Пункт назначения</label>
+                    <div class="col-sm-10">         
+                      <input type="date" name="period_from">
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <label for="colFormLabel" class="col-sm-2 col-form-label">Пункт назначения</label>
+                    <div class="col-sm-10">
+ 
+                      <input type="date" name="period_to">
+                    </div>
+                  </div>
+
+                <button class="btn btn-primary">Отправить</button>
 </form>
 
 
