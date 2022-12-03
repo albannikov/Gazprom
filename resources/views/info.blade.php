@@ -4,3 +4,4 @@
 <p>С {{ $info->period_from }}<p>
 <p>По {{ $info->period_to }}<p>
 {!! QrCode::size(300)->generate('http://road.local/qr-code/' . $info->qr_code ) !!}
+<img src="/img/blank.jpeg" width="400" height="600">
