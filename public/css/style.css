@@ -145,6 +145,14 @@ body {
     }
 }
 
+
+tbody, td, tfoot, th, thead, tr {
+    border-color: rgb(197, 197, 197);
+    border-style: solid;
+    border-width: 0;
+}
+
+
 .wave {
     background: rgba(243 243 243 / 25%);
     border-radius: 1000% 1000% 0 0;
