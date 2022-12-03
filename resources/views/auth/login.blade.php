@@ -11,7 +11,11 @@
  
     </head>
     <body>
-
+    <div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+        </div>
     <div class="wrapper">
         <div class="logo">
             <img src="/img/logo-square.png" alt="">
