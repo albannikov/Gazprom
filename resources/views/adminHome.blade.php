@@ -68,10 +68,11 @@
     </tr>
   </thead>
 
-  <form action="{{ route('logout') }}" method="POST" class="d-none">
+  <!-- <a href="{{ url('/logout') }}"> logout </a> -->
+  <!-- <form action="{{ route('logout') }}" method="POST" class="d-none">
         @csrf
         <button>Выйти</button>
-  </form>
+  </form> -->
 
   <tbody>
   @foreach($cars as $car)
