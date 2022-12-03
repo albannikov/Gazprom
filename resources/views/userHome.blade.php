@@ -64,23 +64,20 @@
   </thead>
   <tbody>
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
+      <td>{{ $car->state_number }}</td>
+      <td>{{ $car->model }}</td>
+      <td>{{ $car->year_of_release }}</td>
+      <td>{{ $car->code_ts }}</td>
+      <td>{{ $car->type_of_transport_service }}</td>
+      <td>{{ $car->view_ts }}</td>
+      <td>{{ $car->type_ts }}</td>
+      <td>{{ $car->the_value_of_the_vehicle_type_characteristic }}</td>
+      <td>{{ $car->country_of_manufacture }}</td>
+      <td>{{ $car->type_of_fuel }}</td>
+      <td>{{ $car->supplier }}</td>
+      <td>{{ $car->subcontracting }}</td>
+      <td>{{ $car->the_basis_of_ownership }}</td>
+    </tr>   
   </tbody>
 </table>
 
