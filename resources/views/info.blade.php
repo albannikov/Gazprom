@@ -3,4 +3,4 @@
 <p>Точка Б: {{ $info->point_b }}<p>
 <p>С {{ $info->period_from }}<p>
 <p>По {{ $info->period_to }}<p>
-{!! QrCode::size(300)->generate('http://road.local/qr-code/393857' ) !!}
+{!! QrCode::size(300)->generate('http://road.local/qr-code/' . $info->qr_code ) !!}

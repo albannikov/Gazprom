@@ -14,10 +14,18 @@ use Auth;
 
 class AdminController extends Controller
 {
-    public function applicationAccpet(Request $request)
-    {
-
-    }
+   public function Postsearch(Request $request){
+       $state_number = $request->input('search');
+       if(Pass::where('state_number', $state_number)->first()){
+            $result = Pass::where('state_number', $state_number)->first();
+            
+            return view('search',compact('result'));
+       }
+       else{
+            $resultFalse = 'Ничего не найдено';
+            return view('search', compact('resultFalse'));
+       }
+   }
 
     public function changeStatus(Request $request)
     {  
@@ -51,7 +59,7 @@ class AdminController extends Controller
             return redirect('application-admin');
         }
         
-
+        
 
     }
 }

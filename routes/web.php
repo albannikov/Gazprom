@@ -39,7 +39,7 @@ Route::post('/add-application', [UserController::class,'addApplication'])->middl
 
 Route::get('/application-admin',[App\Http\Controllers\HomeController::class, 'applicationAdmin'])->middleware('RoleAdmin:admin');
 Route::get('/search', [App\Http\Controllers\HomeController::class, 'search'])->middleware('RoleAdmin:admin');
-Route::post('/post-search', [App\Http\Controllers\HomeController::class, 'postSearch'])->middleware('RoleAdmin:admin');
+Route::post('/post-search', [AdminController::class, 'postSearch'])->middleware('RoleAdmin:admin');
 Route::post('/application-accpet', [AdminController::class,'applicationAccpet'])->middleware('RoleAdmin:admin');
 Route::post('/changeStatus', [AdminController::class,'changeStatus'])->middleware('RoleAdmin:admin');
 
