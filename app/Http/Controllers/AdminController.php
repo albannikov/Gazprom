@@ -13,5 +13,8 @@ use Auth;
 
 class AdminController extends Controller
 {
-    
+    public function applicationAccpet(Request $request)
+    {
+        
+    }
 }

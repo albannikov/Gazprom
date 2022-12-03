@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\QrCodeController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AdminController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,6 +28,9 @@ Route::get('/application', [App\Http\Controllers\HomeController::class, 'applica
 Route::post('/add-car', [UserController::class,'addCar'])->middleware('RoleUser:user');
 Route::post('/add-application', [UserController::class,'addApplication'])->middleware('RoleUser:user');
 
+
+Route::get('/application-admin',[App\Http\Controllers\HomeController::class, 'applicationAdmin'])->middleware('RoleAdmin:admin');
+Route::post('/application-accpet', [UserController::class,'applicationAccpet'])->middleware('RoleAdmin:admin');
 
 # Тестовые роуты
 Route::get('/list', function(){
