@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Contractors extends Model
 {
-    protected $table = "car";
+    protected $table = "contractors";
     public $timestamps = false;
     protected $fillable = [
         'organization_name',
