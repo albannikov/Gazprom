@@ -3,8 +3,13 @@
     <head>
     <title>АИС "Дороги - Газпром" - кабинет поставщика услуг</title>
         <link rel="shortcut icon" href="/img/favicon.png" />
-        <script src="https://kit.fontawesome.com/ac6463d131.js" crossorigin="anonymous"></script>       
+        <script src="https://kit.fontawesome.com/ac6463d131.js" crossorigin="anonymous"></script>      
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        
         
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -33,16 +38,25 @@
         <div class="text-end">
 
 
-        <div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-    Кнопка выпадающего списка
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-    <li><a class="dropdown-item" href="#">Действие</a></li>
-    <li><a class="dropdown-item" href="#">Другое действие</a></li>
-    <li><a class="dropdown-item" href="#">Что-то еще здесь</a></li>
-  </ul>
+<div class="btn-group">
+  <!-- Кнопка -->
+  <button type="button" class="btn btn btn-outline-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  @foreach($contractors as $contractor)
+  {{ $contractor->organization_name }}
+  @endforeach
+  </button>  
+  <!-- Меню -->  
+  <div class="dropdown-menu menu-foruser">
+  <h3>Карточка предприятия</h3>
+@foreach($contractors as $contractor)
+     <p>Название организации {{ $contractor->organization_name }}</p>
+     <p>Номер телефона: {{ $contractor->number }}</p>
+     <p>Почта {{ $contractor->email }}</p>
+     <p>Код СМА {{ $contractor->code_sma }}</p>
+@endforeach
+  </div>
 </div>
+
 
         <button action="{{ route('logout') }}" type="button" class="btn btn-outline-primary">
           <form method="POST" action="{{ route('logout') }}">
@@ -65,13 +79,7 @@
       
       <section class="main-section">
 
-<h3>Карточка предприятия</h3>
-@foreach($contractors as $contractor)
-     <p>Название организации {{ $contractor->organization_name }}</p>
-     <p>Номер телефона: {{ $contractor->number }}</p>
-     <p>Почта {{ $contractor->email }}</p>
-     <p>Код СМА {{ $contractor->code_sma }}</p>
-@endforeach
+
 
 
 <table class="table table-hover">

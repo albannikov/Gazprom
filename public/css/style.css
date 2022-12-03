@@ -164,6 +164,11 @@ a, u {
     text-decoration: none;
   }
 
+  
+.dropdown-menu {
+    /* background-color: #039BE5; */
+    padding: 20px;
+  }
 .wave {
     background: rgba(243 243 243 / 25%);
     border-radius: 1000% 1000% 0 0;
