@@ -25,7 +25,7 @@
           <li><a href="/application-admin" class="nav-link px-2">Список заявок</a></li>
           <li><a href="/application" class="nav-link px-2">Добавить заявку</a></li>
           <li><a href="#" class="nav-link px-2">Все предприяития</a></li>
-          <li><a href="#" class="nav-link px-2">About</a></li>
+          <li><a href="/search" class="nav-link px-2">Поиск</a></li>
         </ul>
 
     
