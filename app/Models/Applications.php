@@ -18,6 +18,7 @@ class Applications extends Model
         'period_from',
         'period_to',
         'state_number',
-        'status'
+        'status',
+        'comment',
     ];
 }
