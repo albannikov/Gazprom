@@ -64,7 +64,7 @@ class HomeController extends Controller
         $id = Auth::id();
         $contractors = Contractors::where('id_user', $id)->get();
         $cars = Car::where('id_user', $id)->get();
-        return view('car',compact('contractors'));
+        return view('car',compact('contractors','cars'));
         
     }
 
