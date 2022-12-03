@@ -31,8 +31,7 @@
           <li><a href="/home" class="nav-link px-2 text-secondary">Главная</a></li>
           <li><a href="/car" class="nav-link px-2">Добавить машину</a></li>
           <li><a href="/application" class="nav-link px-2">Добавить заявку</a></li>
-          <li><a href="#" class="nav-link px-2">FAQs</a></li>
-          <li><a href="#" class="nav-link px-2">About</a></li>
+
         </ul>
 
         <div class="text-end">
