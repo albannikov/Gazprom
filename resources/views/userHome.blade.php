@@ -55,8 +55,8 @@
 @endforeach
 
 
-<table class="table">
-  <thead>
+<table class="table table-hover">
+<thead class="table-dark">
     <tr>
       <th scope="col">Гос. Номер</th>
       <th scope="col">Модель ТС</th>
