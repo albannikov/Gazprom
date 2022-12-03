@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\User;
+use Auth;
 class HomeController extends Controller
 {
     /**
@@ -21,8 +22,18 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('home');
+        if($request->user()->role == 'admin')
+            return view('adminHome');
+        else{
+            return view('userHome');
+        }
+        
+        
     }
+
+    
+
+    
 }
