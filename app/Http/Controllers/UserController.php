@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Contractors;
 use App\Models\User;
 use App\Models\Car;
+use App\Models\Applications;
 use Auth;
 
 class UserController extends Controller
@@ -35,6 +36,23 @@ class UserController extends Controller
         ]);
         
         return redirect('/home');
+    }
+
+    public function addApplication(Request $request)
+    {
+        $id = Auth::id();
+        $request->input('')
+        
+        Applications::create([
+
+            'id_car' => 123,
+            'id_user' => $id,
+            'point_a' => $point_a,
+            'point_b' => $point_b,
+            'period' => $period,
+            'state_number' => $state_number,
+
+        ]);
     }
     
 }
