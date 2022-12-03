@@ -73,7 +73,42 @@
     <body>      
       <section class="main-section">
 
+
+      
+
+<table class="table table-hover">
+<thead class="table-dark table-font">
+    <tr>
+      <th scope="col">Гос. Номер</th>
+      <th scope="col">Точка А</th>
+      <th scope="col">Точка Б</th>
+      <th scope="col">Действителен с</th>
+      <th scope="col">Действителен по</th>
+      <th scope="col">Уникальный код</th>
+      <th scope="col">QR-код</th>
+
+     
+      <tbody>
       @foreach($allPass as $pass)
+    <tr>
+      <td>{{ $pass->state_number }}</td>
+      <td>{{ $pass->point_a }}</td>
+      <td>{{ $pass->point_b }}</td>
+      <td>{{ $pass->period_from }}</td>
+      <td> {{ $pass->period_to }}</td>   
+      <td><a href="/qr-code/{{ $pass->qr_code }}">Уникальный код</a></td>
+      <td>{!! QrCode::size(300)->generate('http://road.local/qr-code/' . $pass->qr_code ) !!}</td>
+    </tr>   
+    @endforeach
+  </tbody>
+
+    </tr>
+  </thead>
+</table>
+
+
+
+      <!-- @foreach($allPass as $pass)
     <p>Номер машины: {{ $pass->state_number }}</p>
     <p>Точка А: {{ $pass->point_a }}</p>
     <p>Точка Б: {{ $pass->point_b }}</p>
@@ -82,7 +117,7 @@
     {!! QrCode::size(300)->generate('http://road.local/qr-code/' . $pass->qr_code ) !!}
     <a href="/qr-code/{{ $pass->qr_code }}">Уникальный код</a>
     @endforeach
-        
+         -->
 
         </section>
 
