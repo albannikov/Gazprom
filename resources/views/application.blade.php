@@ -156,13 +156,22 @@
       <tbody>
       @foreach($applications as $application)
     <tr>
+
+    @if($application->status == 'Отклонено')
+      <tr class="table-danger">      
+      @elseif($application->status == 'отправлено')
+      <tr class="table-info">      
+      @elseif($application->status == 'Выдано разрешение')
+      <tr class="table-success">
+       @endif
+
       <td>{{ $application->state_number }}</td>
       <td>{{ $application->point_a }}</td>
       <td>{{ $application->point_b }}</td>
       <td>{{ $application->period_from }}</td>
       <td>{{ $application->period_to }} </td>   
-      <td>{{ $application->status }}</td>
-      
+      <td>{{ $application->status }}</td>   
+       
     </tr>   
     @endforeach
   </tbody>
