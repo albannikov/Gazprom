@@ -75,7 +75,8 @@
 
       <form action="{{ url('/add-application') }}" method="POST">
      @csrf
-        <div class="container">
+        <div class="container p-4">
+
                   <div class="row mb-3">
                         <label for="colFormLabel" class="col-sm-2 col-form-label">Гос. Номер</label>
                   <div class="col-sm-10">    
@@ -123,7 +124,7 @@
                   <div class="row mb-3">
                     <label for="colFormLabel" class="col-sm-2 col-form-label">Пункт назначения</label>
                     <div class="col-sm-10">         
-                      <input type="date" name="period_from">
+                      <input type="date" class="form-control" name="period_from">
                     </div>
                   </div>
 
@@ -131,11 +132,12 @@
                     <label for="colFormLabel" class="col-sm-2 col-form-label">Пункт назначения</label>
                     <div class="col-sm-10">
  
-                      <input type="date" name="period_to">
+                      <input type="date" class="form-control"name="period_to">
                     </div>
                   </div>
 
                 <button class="btn btn-primary">Отправить</button>
+</div>
 </form>
 
 
@@ -143,8 +145,8 @@
 <thead class="table-dark table-font">
     <tr>
       <th scope="col">Гос. Номер</th>
-      <th scope="col">Точка А</th>
-      <th scope="col">Точка Б</th>
+      <th scope="col">Пункт отправления</th>
+      <th scope="col">Пункт назначения</th>
       <th scope="col">Действителен с</th>
       <th scope="col">Действителен по</th>
       <th scope="col">Статус</th>

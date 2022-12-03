@@ -154,6 +154,10 @@ body {
 }
 
 
+.addpass-form {
+    padding: 200px;
+}
+
 tbody, td, tfoot, th, thead, tr {
     border-color: rgb(197, 197, 197);
     border-style: solid;
