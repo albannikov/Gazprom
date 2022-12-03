@@ -14,6 +14,13 @@ use Auth;
 
 class AdminController extends Controller
 {
+
+   public function generateReport()
+   {
+        return 123;
+   }
+
+
    public function Postsearch(Request $request){
        $state_number = $request->input('search');
        if(Pass::where('state_number', $state_number)->first()){

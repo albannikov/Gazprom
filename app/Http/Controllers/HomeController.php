@@ -78,8 +78,9 @@ class HomeController extends Controller
     public function pass()
     {
         $id = Auth::id();
+        $contractors = Contractors::where('id_user', $id)->get();
         $allPass = Pass::where('id_user',$id)->get();
-        return view('pass', compact('allPass'));
+        return view('pass', compact('allPass','contractors'));
     }
 
     public function search()
