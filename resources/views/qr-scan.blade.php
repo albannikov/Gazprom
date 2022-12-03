@@ -13,8 +13,8 @@ function onScanSuccess(decodedText, decodedResult) {
         ++countResults;
         lastResult = decodedText;
         // Handle on success condition with the decoded message.
-        let str = 'road.local';
-        let test = lastResult.search('road.local');
+        let str = 'gp.admrad.ru';
+        let test = lastResult.search('gp.admrad.ru');
         if(test == -1){
             alert('Подделка qr кода')
         }

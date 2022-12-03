@@ -97,7 +97,7 @@
       <td>{{ $pass->period_from }}</td>
       <td> {{ $pass->period_to }}</td>   
       <td><a href="/qr-code/{{ $pass->qr_code }}">Уникальный код</a></td>
-      <td>{!! QrCode::size(300)->generate('http://road.local/qr-code/' . $pass->qr_code ) !!}</td>
+      <td>{!! QrCode::size(180)->generate('http://gp.admrad.ru/qr-code/' . $pass->qr_code ) !!}</td>
     </tr>   
     @endforeach
   </tbody>
