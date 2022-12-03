@@ -26,5 +26,6 @@ class Car extends Model
         'supplier',
         'subcontracting',
         'the_basis_of_ownership',
+        'sma',
     ];
 }

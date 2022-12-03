@@ -98,6 +98,7 @@
       <th scope="col">Поставщик ТУ</th>
       <th scope="col">Субподряд</th>
       <th scope="col">Основание владения</th>
+      <th scope="col">СМА</th>
      
     </tr>
   </thead>
@@ -123,6 +124,7 @@
       <td>{{ $car->supplier }}</td>
       <td>{{ $car->subcontracting }}</td>
       <td>{{ $car->the_basis_of_ownership }}</td>
+      <td>{{ $car->sma }}</td>
     </tr>   
     @endforeach
   </tbody>
