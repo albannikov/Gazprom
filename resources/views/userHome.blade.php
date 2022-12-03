@@ -13,6 +13,7 @@
  
     </head>
     <body>
+      <section class="main-section">
 
      
 <p>страница пользователя</p>
@@ -69,5 +70,5 @@
     @endforeach
   </tbody>
 </table>
-
+</section>
 </body>
