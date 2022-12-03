@@ -13,7 +13,12 @@ function onScanSuccess(decodedText, decodedResult) {
         ++countResults;
         lastResult = decodedText;
         // Handle on success condition with the decoded message.
-        console.log(`Scan result ${decodedText}`, decodedResult);
+        let str = 'road.local';
+        let test = lastResult.search('road.local');
+        if(test == -1){
+            alert('Подделка qr кода')
+        }
+        console.log(test)
     }
 }
 
