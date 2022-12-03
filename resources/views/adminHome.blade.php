@@ -53,10 +53,6 @@
       <section class="main-section">
 
 
-      
-<p>страница администратора</p>
-
-
 <table class="table table-hover">
 <thead class="table-dark">
     <tr>
