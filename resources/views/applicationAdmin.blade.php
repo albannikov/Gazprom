@@ -105,30 +105,6 @@
   </tbody>
 </table>
 
-
-
-
-    <!-- @foreach($applications as $application)
-        <form action="{{ url('/changeStatus') }}" method="POST">
-            @csrf
-            <p>Организация {{ $application->organization_name }}</p>
-            <p>Номер машины {{ $application->state_number }}</p>
-            <p>Точка А {{ $application->point_a }}</p>
-            <p>Точка Б {{ $application->point_b }}</p>
-            <p>с {{ $application->period_from }} по {{ $application->period_to }} </p>
-            <p>Статус: {{ $application->status }}</p>
-            @if($application->status == 'отправлено')
-                
-                <input type="hidden" name="id_applications" value="{{ $application->id_applications }}">   
-                <button class="btn btn-outline-success" value="Принято в обработку" name="status">Принять в работу </button>            
-            @elseif($application->status == 'Принято в обработку')                
-                <input type="hidden" name="id_applications" value="{{ $application->id_applications }}">
-                <input type="submit" value="Выдано разрешение" name="status">
-                <input type="submit" value="Отклонено" name="status">
-            @endif
-   
-    </form>
-@endforeach -->
     </section>
 
     <footer class="footer d-flex flex-wrap justify-content-between align-items-center border-top p-5">
