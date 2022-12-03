@@ -12,7 +12,7 @@
 
  
     </head>
-    <header class="p-3 bg-dark text-white">
+    <header class="p-3 menu text-white">
     <div class="container">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
         <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
@@ -27,18 +27,16 @@
           <li><a href="#" class="nav-link px-2 text-white">About</a></li>
         </ul>
 
-        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
-          <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
-        </form>
+    
 
         <div class="text-end">
-          <button type="button" class="btn btn-outline-light me-2">Login</button>
-          <button type="button" class="btn btn-warning">Sign-up</button>
+          <button type="button" class="btn btn-outline-light me-2">Выход</button>
+ 
         </div>
       </div>
     </div>
   </header>
-  
+
     <body>
       
       <section class="main-section">
@@ -76,11 +74,11 @@
      
     </tr>
   </thead>
-
+<!-- 
   <form action="{{ route('logout') }}" method="POST" class="d-none">
         @csrf
         <button>Выйти</button>
-  </form>
+  </form> -->
 
   <tbody>
   @foreach($cars as $car)
