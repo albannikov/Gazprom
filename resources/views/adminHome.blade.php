@@ -1,4 +1,5 @@
 <!doctype html>
+
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
     <title>АИС "Дороги - Газпром" - кабинет поставщика услуг</title>
@@ -30,13 +31,24 @@
     
 
         <div class="text-end">
-          <button type="button" class="btn btn-outline-light me-2">Выход</button>
- 
+
+            <a class="dropdown-item" href="{{ route('logout') }}"
+                onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">
+                {{ __('Logout') }}
+            </a>
+
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+            </form>
+            
         </div>
       </div>
     </div>
   </header>
-
+ 
+          
+        
     <body>
       
       <section class="main-section">
@@ -44,8 +56,6 @@
 
       
 <p>страница администратора</p>
-
-
 
 
 <table class="table table-hover">

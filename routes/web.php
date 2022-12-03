@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\QrCodeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
+use Illuminate\Support\Facades\Auth;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,8 +18,12 @@ use App\Http\Controllers\AdminController;
 */
 
 Route::get('/', function () {
-    
-    return view('/auth/login');
+    if(Auth::check()){
+        return redirect('/home');
+    }
+    else{
+        return redirect('/login');
+    }
 });
 
 Auth::routes();
