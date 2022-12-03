@@ -63,6 +63,7 @@ body {
     display: block;
     border: none;
     outline: none;
+    
     background: none;
     font-size: 1.2rem;
     color: #666;
@@ -75,10 +76,12 @@ body {
     margin-bottom: 20px;
     border-radius: 20px;
     box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #fff;
+    outline: none;
 }
 
 .wrapper .form-field .fas {
     color: #555;
+    outline: none;
 }
 
 .wrapper .btn {
