@@ -41,18 +41,22 @@ class UserController extends Controller
     public function addApplication(Request $request)
     {
         $id = Auth::id();
-        $request->input('')
+        $find_state_number = $request->input('state_number');
+
+        $id_car = Car::where('state_number',$find_state_number)->first('id_car');
         
         Applications::create([
 
-            'id_car' => 123,
+            'id_car' => $id_car->id_car,
             'id_user' => $id,
-            'point_a' => $point_a,
-            'point_b' => $point_b,
-            'period' => $period,
-            'state_number' => $state_number,
+            'point_a' => $request->input('point_a'),
+            'point_b' => $request->input('point_b'),
+            'period' => $request->input('period'),
+            'state_number' => $request->input('state_number'),
 
         ]);
+
+        return redirect('/home');
     }
     
 }
