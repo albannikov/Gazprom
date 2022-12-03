@@ -21,7 +21,7 @@
 
 
 <!-- Хэдер -->
-<header class="p-3 menu">
+   <header class="p-3 menu">
     <div class="container">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
         <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-decoration-none">
@@ -30,13 +30,31 @@
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
           <li><a href="/home" class="nav-link px-2">Главная</a></li>
-          <li><a href="/application-admin" class="nav-link px-2 text-secondary">Список заявок</a></li>
-          <li><a href="/report" class="nav-link px-2">Отчеты</a></li>
+          <li><a href="/application-admin" class="nav-link px-2 text-secondary">Список заявок</a></li>          
           <li><a href="/qr" class="nav-link px-2">Считать QR-код</a></li>
           <li><a href="/search" class="nav-link px-2">Поиск по номеру</a></li>
+          <div class="btn-group">
+
+          <li><a class="nav-link px-2 text-primary" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Отчеты
+            </a>
+            <div class="dropdown-menu">
+                <form action="{{ url('/generate') }}" method="POST">    
+                  @csrf
+                  <input type="hidden" name="applications">
+                  <input type="hidden" name="car">
+                  <input type="hidden" >
+                  <button class="dropdown-item" name="pass" value="pass">Выгрузить пропуски</button>
+                  <button class="dropdown-item" name="car" value="car">Выгрузить машины</button>
+                  <button class="dropdown-item" name="applications" value="applications">Выгрузить заявки</button>
+              </form>
+            </div>
+          </div>
+</li>
         </ul>  
 
 
+        
         <button action="{{ route('logout') }}" type="button" class="btn btn-outline-primary">
           <form method="POST" action="{{ route('logout') }}">
             @csrf
@@ -46,6 +64,8 @@
         {{ __('Выход') }}
     </a>
 </form> </button>
+
+
       </div>
     </div>
   </header>
@@ -105,30 +125,6 @@
   </tbody>
 </table>
 
-
-
-
-    <!-- @foreach($applications as $application)
-        <form action="{{ url('/changeStatus') }}" method="POST">
-            @csrf
-            <p>Организация {{ $application->organization_name }}</p>
-            <p>Номер машины {{ $application->state_number }}</p>
-            <p>Точка А {{ $application->point_a }}</p>
-            <p>Точка Б {{ $application->point_b }}</p>
-            <p>с {{ $application->period_from }} по {{ $application->period_to }} </p>
-            <p>Статус: {{ $application->status }}</p>
-            @if($application->status == 'отправлено')
-                
-                <input type="hidden" name="id_applications" value="{{ $application->id_applications }}">   
-                <button class="btn btn-outline-success" value="Принято в обработку" name="status">Принять в работу </button>            
-            @elseif($application->status == 'Принято в обработку')                
-                <input type="hidden" name="id_applications" value="{{ $application->id_applications }}">
-                <input type="submit" value="Выдано разрешение" name="status">
-                <input type="submit" value="Отклонено" name="status">
-            @endif
-   
-    </form>
-@endforeach -->
     </section>
 
     <footer class="footer d-flex flex-wrap justify-content-between align-items-center border-top p-5">

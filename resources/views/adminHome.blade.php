@@ -4,6 +4,10 @@
     <head>
     <title>АИС "Дороги - Газпром" - кабинет поставщика услуг</title>
         <link rel="shortcut icon" href="/img/favicon.png" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,13 +26,31 @@
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
           <li><a href="/home" class="nav-link px-2 text-secondary">Главная</a></li>
-          <li><a href="/application-admin" class="nav-link px-2">Список заявок</a></li>
-          <li><a href="/report" class="nav-link px-2">Отчеты</a></li>
+          <li><a href="/application-admin" class="nav-link px-2">Список заявок</a></li>          
           <li><a href="/qr" class="nav-link px-2">Считать QR-код</a></li>
           <li><a href="/search" class="nav-link px-2">Поиск по номеру</a></li>
+          <div class="btn-group">
+
+          <li><a class="nav-link px-2 text-primary" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Отчеты
+            </a>
+            <div class="dropdown-menu">
+                <form action="{{ url('/generate') }}" method="POST">    
+                  @csrf
+                  <input type="hidden" name="applications">
+                  <input type="hidden" name="car">
+                  <input type="hidden" >
+                  <button class="dropdown-item" name="pass" value="pass">Выгрузить пропуски</button>
+                  <button class="dropdown-item" name="car" value="car">Выгрузить машины</button>
+                  <button class="dropdown-item" name="applications" value="applications">Выгрузить заявки</button>
+              </form>
+            </div>
+          </div>
+        </li>
         </ul>  
 
 
+        
         <button action="{{ route('logout') }}" type="button" class="btn btn-outline-primary">
           <form method="POST" action="{{ route('logout') }}">
             @csrf
