@@ -18,7 +18,10 @@ function onScanSuccess(decodedText, decodedResult) {
         if(test == -1){
             alert('Подделка qr кода')
         }
-        console.log(test)
+        else{
+            window.location.href = lastResult;
+        }
+        
     }
 }
 
