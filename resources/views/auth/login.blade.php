@@ -13,6 +13,7 @@
  
     </head>
     <body>
+        <authbody>
     <div>
             <div class="wave"></div>
             <div class="wave"></div>
@@ -45,7 +46,7 @@
         </form>
       
     </div>
-
+</authbody>
     </body>
 </html>
 
