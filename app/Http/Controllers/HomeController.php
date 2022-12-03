@@ -26,9 +26,11 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {
-        if($request->user()->role == 'admin')
-            return view('adminHome');
+        
+        if($request->user()->role == 'admin'){
             
+            return view('adminHome');
+        }
         else{
             //Получаем список машин
             $id = Auth::id();
@@ -50,6 +52,13 @@ class HomeController extends Controller
         
     }
 
+    
+    public function car(Request $request)
+    {
+       
+        return view('car');
+        
+    }
 
 
     

@@ -1,5 +1,5 @@
 <form action="{{ url('/add-car') }}" method="POST">
-     @csrf
+        @csrf
           <p>Гос. Номер: <input type="text" name="state_number"></p>
           <p>Модель ТС: <input type="text" name="model"></p>
           <p>Год выпуска: <input type="text" name="year_of_release"></p>
