@@ -49,8 +49,9 @@ class HomeController extends Controller
     {
        
             $id = Auth::id();
+            $contractors = Contractors::where('id_user', $id)->get();
             $applications = Applications::where('id_user',$id)->get();
-            return view('application',compact('applications'));
+            return view('application',compact('applications','contractors'));
         
         
     }
