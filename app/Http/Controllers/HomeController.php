@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\Car;
 use App\Models\Contractors;
 use App\Models\Applications;
+use App\Models\Pass;
 use Auth;
 
 class HomeController extends Controller
@@ -20,6 +21,8 @@ class HomeController extends Controller
     {
         $this->middleware('auth');
     }
+
+    
 
     /**
      * Show the application dashboard.
@@ -53,7 +56,6 @@ class HomeController extends Controller
             $applications = Applications::where('id_user',$id)->get();
             return view('application',compact('applications','contractors'));
         
-        
     }
 
     
@@ -66,13 +68,19 @@ class HomeController extends Controller
         
     }
 
-    #Далее идут функции для работы администратора
+    
     public function applicationAdmin(Request $request)
     {
         $applications = Applications::join('contractors', 'contractors.id_user', '=', 'applications.id_user')->where('applications.status','отправлено')->orWhere('applications.status','Принято в обработку')->get(['applications.point_a','applications.point_b','applications.period_from','applications.period_to','applications.state_number','applications.status','applications.id_applications','contractors.organization_name']);
         return view('applicationAdmin',compact('applications'));
     }
 
+    public function pass()
+    {
+        $id = Auth::id();
+        $allPass = Pass::where('id_user',$id)->get();
+        return view('pass', compact('allPass'));
+    }
 
     
 

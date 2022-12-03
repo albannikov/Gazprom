@@ -1,6 +1,6 @@
-@foreach($info as $str)
-    <p>Номер машины {{ $info->state_number }}</p>
-    <p>Точка А {{ $info->point_a  }}</p>
-    <p>Точка А {{ $info->point_b  }}</p>
-    <p>Срок действия с {{ $info->period_from }} по {{ $info->period_to }} </p>
-    
+<p>Номер машины: {{ $info->state_number }}<p>
+<p>Точка А: {{ $info->point_a }}<p>
+<p>Точка Б: {{ $info->point_b }}<p>
+<p>С {{ $info->period_from }}<p>
+<p>По {{ $info->period_to }}<p>
+{!! QrCode::size(300)->generate('http://road.local/qr-code/393857' ) !!}
