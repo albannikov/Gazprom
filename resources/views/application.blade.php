@@ -11,5 +11,6 @@
     <p>Точка А {{ $application->point_a }}</p>
     <p>Точка Б {{ $application->point_b }}</p>
     <p>с {{ $application->period_from }} по {{ $application->period_to }} </p>
+    <p>Статус: {{ $application->status }}</p>
 @endforeach
      
