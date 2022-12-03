@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Pass extends Model
 {
-    protected $table = "Pass";
+    protected $table = "pass";
     public $timestamps = false;
     protected $fillable = [
         'id_car',

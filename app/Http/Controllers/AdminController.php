@@ -22,13 +22,29 @@ class AdminController extends Controller
     public function underСonsideration(Request $request)
     {  
         
-        if($request->input('status') == 'На рассмотрении'){
-            Applications::where('id_applications',$request->input('id_applications'))->update(['status' => 'На рассмотрении']);
+        if($request->input('status') == 'Принято в обработку'){
+            Applications::where('id_applications',$request->input('id_applications'))->update(['status' => 'Принято в обработку']);
+            return redirect('application-admin');
+        }
+        elseif($request->input('status') == 'Выдано разрешение'){
+            $rand = mt_rand(1000, 999999);
+            
+            $id_applications =  $request->input('id_applications');
+            $application = Applications::where('id_applications',$id_applications)->first();
+            Pass::create([
+                'id_car' => $application->id_car,
+                'id_user' => $application->id_user,
+                'point_a' => $application->point_a,
+                'point_b' => $application->point_b,
+                'period_from' => $application->period_from,
+                'period_to' => $application->period_to,
+                'state_number' => $application->state_number,
+                'qr_code' => $rand,
+            ]);
             return redirect('application-admin');
         }
 
-        $id_applications =  $request->input('id_applications');
-        $application = Applications::where('id_applications',$id_applications)->first();
+        
         
 
 
