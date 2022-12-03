@@ -67,7 +67,7 @@ class HomeController extends Controller
     #Далее идут функции для работы администратора
     public function applicationAdmin(Request $request)
     {
-        $applications = Applications::join('contractors', 'contractors.id_user', '=', 'applications.id_user')->get(['applications.point_a','applications.point_b','applications.period_from','applications.period_to','applications.state_number','applications.status','contractors.organization_name']);
+        $applications = Applications::join('contractors', 'contractors.id_user', '=', 'applications.id_user')->get(['applications.point_a','applications.point_b','applications.period_from','applications.period_to','applications.state_number','applications.status','applications.id_applications','contractors.organization_name']);
         return view('applicationAdmin',compact('applications'));
     }
 

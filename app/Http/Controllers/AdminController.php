@@ -15,6 +15,11 @@ class AdminController extends Controller
 {
     public function applicationAccpet(Request $request)
     {
-        
+
+    }
+
+    public function underСonsideration(Request $request)
+    {
+        return $request->input('id_applications');
     }
 }

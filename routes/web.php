@@ -30,7 +30,8 @@ Route::post('/add-application', [UserController::class,'addApplication'])->middl
 
 
 Route::get('/application-admin',[App\Http\Controllers\HomeController::class, 'applicationAdmin'])->middleware('RoleAdmin:admin');
-Route::post('/application-accpet', [UserController::class,'applicationAccpet'])->middleware('RoleAdmin:admin');
+Route::post('/application-accpet', [AdminController::class,'applicationAccpet'])->middleware('RoleAdmin:admin');
+Route::post('/under-consideration', [AdminController::class,'underСonsideration'])->middleware('RoleAdmin:admin');
 
 # Тестовые роуты
 Route::get('/list', function(){
