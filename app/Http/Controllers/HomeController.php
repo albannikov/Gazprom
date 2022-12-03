@@ -31,7 +31,8 @@ class HomeController extends Controller
         
         if($request->user()->role == 'admin'){
             
-            return view('adminHome');
+            $cars = Car::all();
+            return view('adminHome',compact('cars'));
         }
         else{
             //Получаем список машин
@@ -47,7 +48,7 @@ class HomeController extends Controller
     public function application(Request $request)
     {
        
-             $id = Auth::id();
+            $id = Auth::id();
             $applications = Applications::where('id_user',$id)->get();
             return view('application',compact('applications'));
         
