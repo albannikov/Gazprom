@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
-        <link rel="shortcut icon" href="/img/favicon.ico" />
+        <link rel="shortcut icon" href="/img/favicon.png" />
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/css/style.css">
@@ -14,36 +14,31 @@
 
     <div class="wrapper">
         <div class="logo">
-            <img src="/img/logo.png" alt="">
+            <img src="/img/logo-square.png" alt="">
         </div>
         <div class="text-center mt-4 name">
-            Twitter
+            АИС "Дороги - Газпром"
         </div>
-        <form class="p-3 mt-3">
+        <form method="POST" action="{{ route('login') }}" class="p-3 mt-3">
+        @csrf
             <div class="form-field d-flex align-items-center">
                 <span class="far fa-user"></span>
-                <input type="text" name="userName" id="userName" placeholder="Username">
+                <!-- <input type="text" name="userName" id="userName" placeholder="Username"> -->
+                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
             </div>
             <div class="form-field d-flex align-items-center">
                 <span class="fas fa-key"></span>
-                <input type="password" name="password" id="pwd" placeholder="Password">
+                <!-- <input type="password" name="password" id="pwd" placeholder="Password"> -->
+                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
             </div>
-            <button class="btn mt-3">Login</button>
-        </form>
-        <div class="text-center fs-6">
-            <a href="#">Forget password?</a> or <a href="#">Sign up</a>
-        </div>
-    </div>
-
-
-        <form method="POST" action="{{ route('login') }}">
-            @csrf
-            <p>Логин</p><input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-            <p>Пароль</p><input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-            <button type="submit" class="btn btn-primary">
+            <!-- <button class="btn mt-3">Login</button> -->
+            <button class="btn mt-3" type="submit" class="btn btn-primary">
                 {{ __('Login') }}
             </button>
         </form>
+      
+    </div>
+
     </body>
 </html>
 
