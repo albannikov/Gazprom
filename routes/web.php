@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\QrCodeController;
-
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,7 +21,17 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-#Route::get('/home', [App\Http\Controllers\HomeController::class, 'index2']);
+
+
+
+# Тестовые роуты
+Route::get('/list', function(){
+    return "admin";
+})->middleware('RoleAdmin:admin');
+
+Route::get('/list', [UserController::class,'index'])->middleware('RoleUser:user');
+
+
 
 
 Route::get('/qr', function(){
