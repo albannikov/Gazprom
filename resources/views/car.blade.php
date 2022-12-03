@@ -67,7 +67,7 @@
     <section class="main-section">
 <form action="{{ url('/add-car') }}" method="POST">
         @csrf
-          <p>Гос. Номер: <input type="text" name="state_number"></p>
+          <!-- <p>Гос. Номер: <input type="text" name="state_number"></p>
           <p>Модель ТС: <input type="text" name="model"></p>
           <p>Год выпуска: <input type="text" name="year_of_release"></p>
           <p>Код ТС: <input type="text" name="code_ts"></p>
@@ -78,94 +78,95 @@
           <p>Страна производства: <input type="text" name="country_of_manufacture"></p>
           <p>Вид топлива: <input type="text" name="type_of_fuel"></p>
           <p>Субподряд: <input type="text" name="subcontracting"></p>
-          <p>Основание владения: <input type="text" name="the_basis_of_ownership"></p>
-          <button class="btn btn-primary">Отправить</button>
+          <p>Основание владения: <input type="text" name="the_basis_of_ownership"></p> -->      
         
         
           <div class="container">
                   <div class="row mb-3">
                     <label for="colFormLabel" class="col-sm-2 col-form-label">Гос. Номер</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" id="colFormLabel" placeholder="col-form-label">
+                      <input type="text" class="form-control" id="colFormLabel" placeholder="col-form-label" name="state_number">
                     </div>
                   </div>
 
                   <div class="row mb-3">
                     <label for="colFormLabel" class="col-sm-2 col-form-label">Модель ТС</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" id="colFormLabel" placeholder="col-form-label">
+                      <input type="text" class="form-control" id="colFormLabel" placeholder="col-form-label" name="model">
                     </div>
                   </div>
 
                   <div class="row mb-3">
                     <label for="colFormLabel" class="col-sm-2 col-form-label">Год выпуска</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" id="colFormLabel" placeholder="col-form-label">
+                      <input type="text" class="form-control" id="colFormLabel" placeholder="col-form-label" name="year_of_release">
                     </div>
                   </div>
 
                   <div class="row mb-3">
                     <label for="colFormLabel" class="col-sm-2 col-form-label">Код ТС</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" id="colFormLabel" placeholder="col-form-label">
+                      <input type="text" class="form-control" id="colFormLabel" placeholder="col-form-label" name="code_ts">
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <label for="colFormLabel" class="col-sm-2 col-form-label">Вид транспортной услуги</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="colFormLabel" placeholder="col-form-label" name="type_of_transport_service">
                     </div>
                   </div>
 
                   <div class="row mb-3">
                     <label for="colFormLabel" class="col-sm-2 col-form-label">Вид ТС</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" id="colFormLabel" placeholder="col-form-label">
+                      <input type="text" class="form-control" id="colFormLabel" placeholder="col-form-label" name="view_ts">
                     </div>
                   </div>
 
                   <div class="row mb-3">
                     <label for="colFormLabel" class="col-sm-2 col-form-label">Тип ТС</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" id="colFormLabel" placeholder="col-form-label">
+                      <input type="text" class="form-control" id="colFormLabel" placeholder="col-form-label" name="type_ts">
                     </div>
                   </div>
 
                   <div class="row mb-3">
                     <label for="colFormLabel" class="col-sm-2 col-form-label">Значение характеристики типа ТС</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" id="colFormLabel" placeholder="col-form-label">
+                      <input type="text" class="form-control" id="colFormLabel" placeholder="col-form-label" name="the_value_of_the_vehicle_type_characteristic">
                     </div>
                   </div>
 
                   <div class="row mb-3">
                     <label for="colFormLabel" class="col-sm-2 col-form-label">Страна производства</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" id="colFormLabel" placeholder="col-form-label">
+                      <input type="text" class="form-control" id="colFormLabel" placeholder="col-form-label" name="country_of_manufacture">
                     </div>
                   </div>
 
                   <div class="row mb-3">
                     <label for="colFormLabel" class="col-sm-2 col-form-label">Вид топлива</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" id="colFormLabel" placeholder="col-form-label">
+                      <input type="text" class="form-control" id="colFormLabel" placeholder="col-form-label" name="type_of_fuel">
                     </div>
                   </div>
 
                   <div class="row mb-3">
-                    <label for="colFormLabel" class="col-sm-2 col-form-label">Email</label>
+                    <label for="colFormLabel" class="col-sm-2 col-form-label">Субподряд</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" id="colFormLabel" placeholder="col-form-label">
+                      <input type="text" class="form-control" id="colFormLabel" placeholder="col-form-label" name="subcontracting">
                     </div>
                   </div>
 
                   <div class="row mb-3">
-                    <label for="colFormLabel" class="col-sm-2 col-form-label">Email</label>
+                    <label for="colFormLabel" class="col-sm-2 col-form-label">Основание владения</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" id="colFormLabel" placeholder="col-form-label">
+                      <input type="text" class="form-control" id="colFormLabel" placeholder="col-form-label" name="the_basis_of_ownership">
                     </div>
                   </div>
 
-                  <div class="row mb-3">
-                    <label for="colFormLabel" class="col-sm-2 col-form-label">Email</label>
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control" id="colFormLabel" placeholder="col-form-label">
-                    </div>
-                  </div>
+                  <button class="btn btn-primary">Отправить</button>
             
         </div>
 
