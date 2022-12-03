@@ -13,6 +13,7 @@
  
     </head>
     <body>
+      <section class="main-section">
 
      <form action="{{ url('/add-car') }}" method="POST">
      @csrf
@@ -29,7 +30,7 @@
           <p>Вид топлива: <input type="text" name="type_of_fuel"></p>
           <p>Субподряд: <input type="text" name="subcontracting"></p>
           <p>Основание владения: <input type="text" name="the_basis_of_ownership"></p>
-          <button>Отправить</button>
+          <button type="button" class="btn btn-primary">Отправить</button>
      </form>
 
 <p>страница пользователя</p>
@@ -86,5 +87,5 @@
     @endforeach
   </tbody>
 </table>
-
+</section>
 </body>
