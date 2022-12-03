@@ -27,23 +27,7 @@
      <p>Почта {{ $contractor->email }}</p>
      <p>Код СМА {{ $contractor->code_sma }}</p>
 @endforeach
-<h3>Машины</h3>
-@foreach($cars as $car)
-     <p>Гос. Номер: {{ $car->state_number }}</p>
-     <p>Модель ТС: {{ $car->model }}</p>
-     <p>Год выпуска: {{ $car->year_of_release }}</p>
-     <p>Код ТС: {{ $car->code_ts }}</p>
-     <p>Вид транспортной услуги: {{ $car->type_of_transport_service }}</p>
-     <p>Вид ТС: {{ $car->view_ts }}</p>
-     <p>Тип ТС: {{ $car->type_ts }}</p>
-     <p>Значение характеристики типа ТС: {{ $car->the_value_of_the_vehicle_type_characteristic }}</p>
-     <p>Страна производства: {{ $car->country_of_manufacture }}</p>
-     <p>Вид топлива: {{ $car->type_of_fuel }}</p>
-     <p>Поставщик ТУ: {{ $car->supplier }}</p>
-     <p>Субподряд: {{ $car->subcontracting }}</p>
-     <p>Основание владения: {{ $car->the_basis_of_ownership }}</p>
 
-@endforeach
 
 <table class="table">
   <thead>
@@ -63,6 +47,7 @@
     </tr>
   </thead>
   <tbody>
+  @foreach($cars as $car)
     <tr>
       <td>{{ $car->state_number }}</td>
       <td>{{ $car->model }}</td>
@@ -78,6 +63,7 @@
       <td>{{ $car->subcontracting }}</td>
       <td>{{ $car->the_basis_of_ownership }}</td>
     </tr>   
+    @endforeach
   </tbody>
 </table>
 
