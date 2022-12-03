@@ -31,7 +31,7 @@
           <li><a href="/home" class="nav-link px-2 text-secondary">Главная</a></li>
           <li><a href="/car" class="nav-link px-2">Добавить машину</a></li>
           <li><a href="/application" class="nav-link px-2">Направить заявку</a></li>
-          <li><a href="/pass" class="nav-link px-2">Одобренные маршруты</a></li>
+          <li><a href="/pass" class="nav-link px-2">Одобренные заявки</a></li>
         </ul>
 
         <div class="text-end">
