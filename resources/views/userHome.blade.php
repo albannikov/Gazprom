@@ -53,6 +53,7 @@
       <th scope="col">Гос. Номер</th>
       <th scope="col">Модель ТС</th>
       <th scope="col">Год выпуска</th>
+      <th scope="col">Код ТС</th>
       <th scope="col">Вид транспортной услуги</th>
       <th scope="col">Вид ТС</th>
       <th scope="col">Тип ТС</th>
@@ -62,6 +63,7 @@
       <th scope="col">Поставщик ТУ</th>
       <th scope="col">Субподряд</th>
       <th scope="col">Основание владения</th>
+     
     </tr>
   </thead>
   <tbody>
