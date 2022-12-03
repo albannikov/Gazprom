@@ -35,13 +35,21 @@
 
 @endforeach
 
-<table class="table table-dark">
+<table class="table">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">Имя</th>
-      <th scope="col">Фамилия</th>
-      <th scope="col">Username</th>
+      <th scope="col">Гос. Номер</th>
+      <th scope="col">Модель ТС</th>
+      <th scope="col">Год выпуска</th>
+      <th scope="col">Вид транспортной услуги</th>
+      <th scope="col">Вид ТС</th>
+      <th scope="col">Тип ТС</th>
+      <th scope="col">Значение характеристики типа ТС</th>
+      <th scope="col">Страна производства</th>
+      <th scope="col">Вид топлива</th>
+      <th scope="col">Поставщик ТУ</th>
+      <th scope="col">Субподряд</th>
+      <th scope="col">Основание владения</th>
     </tr>
   </thead>
   <tbody>
