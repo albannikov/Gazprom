@@ -9,9 +9,13 @@
 }
 
 
+.cabinet-logo {
+    width: 180px;
+    margin: 0 100px 20px 0;
+}
 
 .menu {
-background-color: rgb(0, 112, 186);
+background-color: rgb(86, 86, 85);
 }
 
 
