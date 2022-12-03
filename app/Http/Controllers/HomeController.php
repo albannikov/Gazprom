@@ -82,6 +82,11 @@ class HomeController extends Controller
         return view('pass', compact('allPass'));
     }
 
+    public function search()
+    {
+        return view('/search');
+    }
+
     
 
     
