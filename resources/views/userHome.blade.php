@@ -27,7 +27,6 @@
           <p>Значение характеристики типа ТС: <input type="text" name="the_value_of_the_vehicle_type_characteristic"></p>
           <p>Страна производства: <input type="text" name="country_of_manufacture"></p>
           <p>Вид топлива: <input type="text" name="type_of_fuel"></p>
-          <p>Поставщик ТУ: <input type="text" name="supplier"></p>
           <p>Субподряд: <input type="text" name="subcontracting"></p>
           <p>Основание владения: <input type="text" name="the_basis_of_ownership"></p>
           <button>Отправить</button>
