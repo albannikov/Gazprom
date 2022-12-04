@@ -1,6 +1,11 @@
 
 
    <head>
+    <style>
+        body{
+            padding: 15px;
+        }
+    </style>
     <title>АИС "Дороги - Газпром" - кабинет поставщика услуг</title>
         <link rel="shortcut icon" href="/img/favicon.png" />
         <script src="https://kit.fontawesome.com/ac6463d131.js" crossorigin="anonymous"></script>      
@@ -19,62 +24,37 @@
         <meta name="csrf-token" content="{{ csrf_token() }}"> 
     </head>
 
-
-
-<table class="table table-hover">
-<thead class="table-dark table-font">
-    <tr> 
-      <th scope="col">Гос. Номер</th>
-      <th scope="col">Пункт отправления</th>
-      <th scope="col">Пункт назначения</th>
-      <th scope="col">Действителен с </th>
-      <th scope="col">Действителен по</th>
-      <th scope="col">Модель ТС</th>
-      <th scope="col">Год выпуска</th>
-      <th scope="col">Код ТС</th>
-      <th scope="col">Вид услуги</th>
-      <th scope="col">Вид ТС</th>
-      <th scope="col">Тип ТС</th>
-      <th scope="col">Характеристика</th>
-      <th scope="col">Страна производства</th>
-      <th scope="col">Вид топлива</th>
-      <th scope="col">Поставщик ТУ</th>
-      <th scope="col">Субподряд</th>
-      <th scope="col">Основание владения</th>
-      <th scope="col">СМА</th>      
-    </tr>
-  </thead>
+  
   
  
 
-  <tbody>
-  @foreach($contractors as $contractor)
-            <p>Название организации{{ $contractor->organization_name }}</p>
+@foreach($contractors as $contractor)
+    <h3>Название организации{{ $contractor->organization_name }}</h3>
 @endforeach
 @foreach ($info as $text)
-    {!! QrCode::size(300)->generate('http://gp.admrad.ru/qr-code/' . $text->qr_code ) !!}
-    <img src="/img/blank.jpeg" width="400" height="600">
+   
+    
 
-    <tr>
-      <td>{{ $text->state_number }}</td>
-      <td>{{ $text->point_a }}</td>
-      <td>{{ $text->point_b }}</td>
-      <td>{{ $text->period_from }}</td>
-      <td>{{ $text->period_to }}</td>
-      <td>{{ $text->model }}</td>
-      <td>{{ $text->year_of_release }}</td>
-      <td>{{ $text->code_ts }}</td>
-      <td>{{ $text->type_of_transport_service }}</td>
-      <td>{{ $text->view_ts }}</td>
-      <td>{{ $text->type_ts }}</td>
-      <td>{{ $text->the_value_of_the_vehicle_type_characteristic }}</td>
-      <td>{{ $text->country_of_manufacture }}</td>
-      <td>{{ $text->type_of_fuel }}</td>
-      <td>{{ $text->supplier	 }}</td>
-      <td>{{ $text->subcontracting }}</td>
-      <td>{{ $text->the_basis_of_ownership }}</td>
-      <td>{{ $text->sma }}</td>
-    </tr>   
-    @endforeach
-  </tbody>
-</table>
+    
+    <p>Гос. Номер: {{ $text->state_number }}</p>
+    <p>Пункт отправления: {{ $text->point_a }}</p>
+    <p>Пункт назначения: {{ $text->point_b }}</p>
+    <p>Действителен с:{{ $text->period_from }}</p>
+    <p>Дейсвителен по: {{ $text->period_to }}</p>
+    <p>Модель ТС: {{ $text->model }}</p>
+    <p>Год выпуска: {{ $text->year_of_release }}</p>
+    <p>Код ТС: {{ $text->code_ts }}</p>
+    <p>Вид услуги: {{ $text->type_of_transport_service }}</p>
+    <p>Вид ТС: {{ $text->view_ts }}</p>
+    <p>Тип ТС: {{ $text->type_ts }}</p>
+    <p>Характеристика: {{ $text->the_value_of_the_vehicle_type_characteristic }}</p>
+    <p>Страна производства: {{ $text->country_of_manufacture }}</p>
+    <p>Вид топлива: {{ $text->type_of_fuel }}</p>
+    <p>Поставщик ТУ: {{ $text->supplier }}</p>
+    <p>Субподряд: {{ $text->subcontracting }}</p>
+    <p>Основание владения: {{ $text->the_basis_of_ownership }}</p>
+    <p>СМА: {{ $text->sma }}</p>
+{!! QrCode::size(300)->generate('http://gp.admrad.ru/qr-code/' . $text->qr_code ) !!}
+@endforeach
+<a href="/img/blank.jpeg"><img src="/img/blank.jpeg" width="200" ></a>
+ 
