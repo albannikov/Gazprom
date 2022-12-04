@@ -122,21 +122,21 @@
 
 
                   <div class="row mb-3">
-                    <label for="colFormLabel" class="col-sm-2 col-form-label">Пункт назначения</label>
+                    <label for="colFormLabel" class="col-sm-2 col-form-label">Действует с</label>
                     <div class="col-sm-10">         
                       <input type="date" class="form-control" name="period_from">
                     </div>
                   </div>
 
                   <div class="row mb-3">
-                    <label for="colFormLabel" class="col-sm-2 col-form-label">Пункт назначения</label>
+                    <label for="colFormLabel" class="col-sm-2 col-form-label">Действует по</label>
                     <div class="col-sm-10">
  
                       <input type="date" class="form-control"name="period_to">
                     </div>
                   </div>
 
-                <button class="btn btn-primary">Отправить</button>
+                <button class="btn btn-primary btn-lg">Отправить</button>
 </div>
 </form>
 

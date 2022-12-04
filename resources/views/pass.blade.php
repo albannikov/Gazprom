@@ -85,7 +85,7 @@
       <th scope="col">Действителен с</th>
       <th scope="col">Действителен по</th>
       <th scope="col">Уникальный код</th>
-      <th scope="col">QR-код</th>
+      <!-- <th scope="col">QR-код</th> -->
 
      
       <tbody>
@@ -96,8 +96,9 @@
       <td>{{ $pass->point_b }}</td>
       <td>{{ $pass->period_from }}</td>
       <td> {{ $pass->period_to }}</td>   
-      <td><a href="/qr-code/{{ $pass->qr_code }}">Уникальный код</a></td>
-      <td>{!! QrCode::size(180)->generate('http://gp.admrad.ru/qr-code/' . $pass->qr_code ) !!}</td>
+      <td><a href="/qr-code/{{ $pass->qr_code }}" class="link">Уникальный код</a></td>
+     
+      <!-- <td>{!! QrCode::size(180)->generate('http://gp.admrad.ru/qr-code/' . $pass->qr_code ) !!}</td> -->
     </tr>   
     @endforeach
   </tbody>
